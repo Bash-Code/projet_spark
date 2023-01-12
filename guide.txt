@@ -1,0 +1,24 @@
+Premièrement
+-------------
+- La version de Java doit être compatible avec la version de pyspark installé. 
+  Vous pouvez vérifier la version Java en exécutant la commande java --version.
+  Assurez-vous que seule la version Java compatible est installée.
+- Après l'installation du projet (git clone): 1. cd projet_spark
+                                              2. pip install -r ./requirements.txt (pour installer tous le dépendances).
+
+
+
+
+Exécution du programme
+-----------------------
+Exécutez les programmes suivants en ordre. (!REMARQUE : chaque étape doit être exécutée dans un nouveau terminal)
+1. Exécution de l'Application Flask avec la commande suivante: python3 ./app.py
+2. Dans un nouveau terminal: python3 ./twitter_app.py -p no_of_pages -k "keyword" 
+   tel que num_pages c'est le nombre de pages voulu, et "keyword" c'est le mot clé à recherché
+   ex: python3 ./twitter_app.py -p 10 -k "corona"
+3. Dans un 3ème terminal:   export PYSPARK_PYTHON=python3
+                            export SPARK_LOCAL_HOSTNAME=localhost
+                            python3 ./spark_app.py
+
+On peut accéder aux données en temps réel sous forme de représentation visuelle en accédant à l'URL indiquée ci-dessous.
+http://localhost:5001/
